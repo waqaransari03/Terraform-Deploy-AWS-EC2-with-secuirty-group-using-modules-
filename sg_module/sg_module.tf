@@ -3,8 +3,10 @@ variable "myvpc" {
         default = "vpc-4b9af431"
 }
 
+variable "sg_name" {
+}
 resource "aws_security_group" "mygroup" {
-        name = "mygroup"
+        name = var.sg_name
         description = "abc"
         vpc_id = var.myvpc
 
